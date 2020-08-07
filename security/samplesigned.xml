@@ -1,0 +1,25 @@
+<library>
+    <book Id="_0">
+        <name>Harry Potter</name>
+    </book>
+    <Signature xmlns="http://www.w3.org/2000/09/xmldsig#">
+        <SignedInfo>
+            <CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#" />
+            <SignatureMethod Algorithm="http://www.w3.org/2000/09/xmldsig#rsa-sha1" />
+            <Reference URI="#_0">
+                <Transforms>
+                    <Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#" />
+                </Transforms>
+                <DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+                <DigestValue>i8YiL2MttRn9qD7D5PvlXH3ymhc=</DigestValue>
+            </Reference>
+        </SignedInfo>
+        <SignatureValue>av2H6YkABSlCMli7aeSuajY/ltZVUuzPBt3wqpgsbFw3L31I7R5GzLa8Jg4HsVt9Wg6eLMQdJBUOgAssrq8XeKh/Zc55jL3vGtZdVhM0deoJMkSc1EyHHgHAnzx+UNqcP/www5koIVBDctFBG1o1IF/BpLNovSXr+AQhbsmFbaYGzglRzv8Q//1zqYSnLR3QoLhAJ6T+wCXsX773+LeOn8P8XiUbErOnnLeA4xd9n8NXeL3WhKZE64y6QFckRsYBi92wInIjq+p40gWkNveClmCSzkrJH3wv84H2uRveko0RODGY9aaJTi8G8YFl8LLkY5gBRKqlrbfPs2h7/wZoAk0=
+</SignatureValue>
+        <KeyInfo>
+            <dsX509Data>
+                <dsX509Certificate>MIIDbTCCAlSgAwIBAgIBADANBgkqhkiG9w0BAQsFADBQMQswCQYDVQQGEwJ1czELMAkGA1UECAwCVkExFzAVBgNVBAoMDnJlY3ljbGluZ3BlcmtzMRswGQYDVQQDDBJyZWN5Y2xpbmdwZXJrcy5jb20wHhcNMjAwODA1MTUzNTIyWhcNMjEwODA1MTUzNTIyWjBQMQswCQYDVQQGEwJ1czELMAkGA1UECAwCVkExFzAVBgNVBAoMDnJlY3ljbGluZ3BlcmtzMRswGQYDVQQDDBJyZWN5Y2xpbmdwZXJrcy5jb20wggEjMA0GCSqGSIb3DQEBAQUAA4IBEAAwggELAoIBAgC3cIS2Zi60PSIjSaHr1y/2C+F7LWOVIEUAcmBgbYvFdMYU/hOBo4WH/C3iPHPjRx2NAYZiJnMEy/1AQFacYpyknGTpIl8gb43CLM1MJ5lgICPANPq9qA5XkO8KY+IZcp4sL4mL9i5o7QcJd/AV7E1XbrehCvLU5q66CEAQvcgt8qZMbG3lHoOR+3mq82Zetr8IrlbVWIqbuAGJbIcdpGZ/7kkDOivE9ASFTWfmFviW4pjIVQUbM05tmaasad4IGnT1y8uxPcCHETuepSeu4CPLZNg0ZHiSKwpEk3ZlGVVOYY+Lu/R6VfKH2E/JSveE6FxUFRDkQUbNOX8UGy9eKlKqgQIDAQABo1AwTjAdBgNVHQ4EFgQU4JM8SlZLzJYhS84jtinF+PHHSrIwHwYDVR0jBBgwFoAU4JM8SlZLzJYhS84jtinF+PHHSrIwDAYDVR0TBAUwAwEB/zANBgkqhkiG9w0BAQsFAAOCAQIAsfovQVrY44p3enoQyf3+kg+kLrbgXm1tM8nU9JMVE26SgZCXak1EIUBP0Y0MLTQharynkTNjyQ8jVXgKIS1AuCMy/XpQoixXh0b+kpi0h3jmHH7WvvFkQCD5manWn1UGfEyGNHEM684aDw/Zp6WPUXiYCgZAYZ7gZRZInAoNTYP3p+iqnqZ7KKitvEGb/vcYueYO50rsORyCipAtLIFBoczfkqWWVbm3iUhFTbsIaHFE3copHf1+PxiUYsNyCJJU407P+QRpthAB7j9PhWddW3CI9HwzGUpHW/2JVKlmjfB9xyFYhaNJsfFMZYCAaY6lcWW5MvukaTosst81PZMdWE4=</dsX509Certificate></dsX509Certificate>
+            </dsX509Data>
+        </KeyInfo>
+    </Signature>
+</library>
