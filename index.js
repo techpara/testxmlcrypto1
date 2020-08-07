@@ -10,7 +10,7 @@ var dom = require('xmldom').DOMParser
 	var sig = new SignedXml()
 	sig.signingKey =  fs.readFileSync('./security/private-key.pem');
 	sig.keyInfoProvider = new MyKeyInfo(x509Certificate);
-    sig.canonicalizationAlgorithm = "http://www.w3.org/2001/10/xml-exc-c14n#";
+  sig.canonicalizationAlgorithm = "http://www.w3.org/2001/10/xml-exc-c14n#";
   sig.signatureAlgorithm = "http://www.w3.org/2001/04/xmldsig-more#rsa-sha256";
 	sig.addReference("/*[local-name(.)='Response']",[
     "http://www.w3.org/2000/09/xmldsig#enveloped-signature",
@@ -25,21 +25,20 @@ var dom = require('xmldom').DOMParser
 	  , SignedXml = require('xml-crypto').SignedXml
 	  , FileKeyInfo = require('xml-crypto').FileKeyInfo  
 	 
-
 	var xml = fs.readFileSync("./security/signed-sample-sml.xml").toString()
 	var doc = new dom().parseFromString(xml) ;  
-
-	var signature = select(doc, "//*[local-name(.)='Signature' and namespace-uri(.)='http://www.w3.org/2000/09/xmldsig#']")[0]
-	//console.log(signature);
+	var signature = select(doc, "//*[local-name(.)='Signature' and namespace-uri(.)='http://www.w3.org/2000/09/xmldsig#']")[0];
 	sig.keyInfoProvider = new FileKeyInfo('./security/RP-X509.cer');
-
 	sig.loadSignature(signature.toString());
-
 	var res = sig.checkSignature(xml);
-	//console.log(res);
-
-	if (!res) console.log(sig.validationErrors)	
-
+	if (!res)
+  { 
+    console.log(sig.validationErrors)	
+  }
+  else
+  {
+    console.log('--verified--');
+  }
 
 	function MyKeyInfo(x509Certificate) {
 				this.getKeyInfo = function (key) {
