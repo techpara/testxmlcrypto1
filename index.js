@@ -15,7 +15,11 @@ var dom = require('xmldom').DOMParser
 	sig.addReference("/*[local-name(.)='Response']",[
     "http://www.w3.org/2000/09/xmldsig#enveloped-signature",
     "http://www.w3.org/2001/10/xml-exc-c14n#"],"http://www.w3.org/2001/04/xmlenc#sha256");
-	sig.computeSignature(xml);
+	sig.computeSignature(xml,{
+  prefix: 'ds',
+   location: { reference: "/*[local-name(.)='Response']/*[local-name(.)='Issuer']", action: "after"
+    }
+});
 	var signedXML = sig.getSignedXml();
 	console.log(signedXML);
 	fs.writeFileSync("./security/signed-sample-sml.xml", signedXML)
@@ -43,7 +47,7 @@ var dom = require('xmldom').DOMParser
 	function MyKeyInfo(x509Certificate) {
 				this.getKeyInfo = function (key) {
 					var prefix = "ds";
-					return "<" + prefix + "X509Data><" + prefix + "X509Certificate>" + x509Certificate + "</" + prefix + "X509Certificate></" + prefix + "X509Data>";
+					return "<" + prefix + ":X509Data><" + prefix + ":X509Certificate>" + x509Certificate + "</" + prefix + ":X509Certificate></" + prefix + ":X509Data>";
 				};
 				this.getKey = function (keyInfo) {
 					return utility_1.default.getPublicKeyPemFromCertificate(x509Certificate).toString();
