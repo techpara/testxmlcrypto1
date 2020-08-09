@@ -9,9 +9,9 @@ var dom = require('xmldom').DOMParser
 	var xml =fs.readFileSync('./security/unsigned-sample-response.xml', 'utf-8');
 	var sig = new SignedXml()
 	sig.signingKey =  fs.readFileSync('./security/RP-2048-RSA256-PrivateKey.pem');
-	sig.keyInfoProvider = new MyKeyInfo(x509Certificate);
-  sig.canonicalizationAlgorithm = "http://www.w3.org/2001/10/xml-exc-c14n#";
-  sig.signatureAlgorithm = "http://www.w3.org/2001/04/xmldsig-more#rsa-sha256";
+	//sig.keyInfoProvider = new MyKeyInfo(x509Certificate);
+  //sig.canonicalizationAlgorithm = "http://www.w3.org/2001/10/xml-exc-c14n#";
+  //sig.signatureAlgorithm = "http://www.w3.org/2001/04/xmldsig-more#rsa-sha256";
 	sig.addReference("/*[local-name(.)='Response']",[
     "http://www.w3.org/2000/09/xmldsig#enveloped-signature",
     "http://www.w3.org/2001/10/xml-exc-c14n#"],"http://www.w3.org/2001/04/xmlenc#sha256");
@@ -21,7 +21,7 @@ var dom = require('xmldom').DOMParser
     }
 });
 	var signedXML = sig.getSignedXml();
-	console.log(signedXML);
+	//console.log(signedXML);
 	fs.writeFileSync("./security/signed-sample-sml.xml", signedXML)
 	//-------------------------
 	var select = require('xml-crypto').xpath
